@@ -10,7 +10,7 @@
     --background: 38 35% 97%;          /* #FAF7F2 ivory */
     --background-warm: 35 30% 92%;     /* #F2EDE4 warm beige */
     --foreground: 22 18% 15%;          /* #2C2420 deep warm charcoal */
-    --muted-text: 28 16% 49%;          /* #8C7B6B warm taupe */
+    --muted-text: 22 16% 36%;          /* #6B5B4E warm taupe (darker for legibility) */
 
     --card: 36 50% 98%;                /* #FFFCF8 soft warm white */
     --card-foreground: 22 18% 15%;
