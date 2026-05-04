@@ -57,10 +57,16 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
+    font-weight: 400;
+    font-size: 17px;
   }
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+  button {
+    font-weight: 500;
   }
 }
 
