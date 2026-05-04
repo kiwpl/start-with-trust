@@ -4,14 +4,14 @@ import { Check, Minus } from "lucide-react";
 type Cell = boolean | string;
 
 const ROWS: { feature: string; cells: [Cell, Cell, Cell] }[] = [
-  { feature: "Inbound calls per month", cells: ["150", "500", "Unlimited"] },
+  { feature: "Inbound calls per month", cells: ["150", "300", "500"] },
   { feature: "Triage & urgency classification", cells: [true, true, true] },
   { feature: "Coordinator SMS & email alerts", cells: [true, true, true] },
   { feature: "Call logs & written summaries", cells: [true, true, true] },
   { feature: "Automated resident callbacks", cells: [false, true, true] },
   { feature: "Call history dashboard", cells: [false, true, true] },
   { feature: "Custom after-hours greeting", cells: [false, true, true] },
-  { feature: "Multi-property support", cells: ["—", "Up to 3", "Unlimited"] },
+  { feature: "Multi-property support", cells: ["—", "Up to 10", "Unlimited"] },
   { feature: "Custom voice persona & script", cells: [false, false, true] },
   { feature: "Full API access", cells: [false, false, true] },
   { feature: "Dedicated account manager", cells: [false, false, true] },
@@ -42,7 +42,7 @@ export const Compare = () => (
           <div className="p-5 border-b border-sand text-xs uppercase tracking-[0.18em] text-taupe">
             Feature
           </div>
-          {["Lobby", "Concierge", "Estate"].map(c => (
+          {["Basic", "Pro", "Enterprise"].map(c => (
             <div key={c}
               className="p-5 border-b border-sand text-center font-serif text-lg text-charcoal">
               {c}
@@ -51,7 +51,7 @@ export const Compare = () => (
 
           {ROWS.map((r, i) => (
             <div key={r.feature} className="contents">
-              <div className={`p-5 text-charcoal ${i % 2 ? "bg-beige/50" : ""}`}>
+              <div className={`p-5 text-charcoal no-underline [text-decoration:none] [&_*]:no-underline ${i % 2 ? "bg-beige/50" : ""}`} style={{ textDecoration: "none" }}>
                 {r.feature}
               </div>
               {r.cells.map((c, idx) => (
