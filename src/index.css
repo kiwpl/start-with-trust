@@ -105,7 +105,8 @@
     border-color: hsl(var(--card-border));
   }
   .eyebrow {
-    @apply text-xs font-medium tracking-[0.2em] uppercase text-terracotta;
+    @apply font-medium tracking-[0.2em] uppercase text-terracotta;
+    font-size: 12px;
   }
 }
 
