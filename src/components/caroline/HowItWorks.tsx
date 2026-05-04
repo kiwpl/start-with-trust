@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const STEPS = [
   { n: "01", title: "Resident Calls", body: "Caroline answers instantly, any time of night." },
   { n: "02", title: "Issue Triaged", body: "She gathers details, assesses urgency in real time." },
-  { n: "03", title: "Coordinator Alerted", body: "In an emergency, the coordinator is called directly. Otherwise, a detailed email summary is sent immediately." },
+  { n: "03", title: "Coordinator Alerted", body: "A detailed email summary is always sent to the coordinator. In a true emergency, Caroline also calls them directly." },
   { n: "04", title: "Resident Updated", body: "An automated callback closes the loop." },
 ];
 
