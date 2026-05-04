@@ -168,9 +168,11 @@ const CallVisual = () => (
   </div>
 );
 
-const TYPING = [
+const TYPING: { who: "resident" | "caroline"; text: string }[] = [
   { who: "resident", text: "There's water leaking under my kitchen sink." },
-  { who: "caroline", text: "Got it — is the water actively dripping or a slow leak?" },
+  { who: "caroline", text: "Got it — is the water actively dripping right now, or is it more of a slow drip?" },
+  { who: "resident", text: "It's a slow drip, been going on since yesterday." },
+  { who: "caroline", text: "Okay, noted. I'll log this and notify your coordinator for a non-emergency follow-up." },
 ];
 
 const TriageVisual = () => {
@@ -178,14 +180,14 @@ const TriageVisual = () => {
   const [showCard, setShowCard] = useState(false);
 
   useEffect(() => {
-    const t1 = setTimeout(() => setShown(1), 1200);
-    const t2 = setTimeout(() => setShown(2), 3200);
-    const t3 = setTimeout(() => setShowCard(true), 4400);
-    return () => {
-      clearTimeout(t1);
-      clearTimeout(t2);
-      clearTimeout(t3);
-    };
+    const timers = [
+      setTimeout(() => setShown(1), 800),
+      setTimeout(() => setShown(2), 2200),
+      setTimeout(() => setShown(3), 3800),
+      setTimeout(() => setShown(4), 5400),
+      setTimeout(() => setShowCard(true), 6800),
+    ];
+    return () => timers.forEach(clearTimeout);
   }, []);
 
   return (
@@ -209,9 +211,9 @@ const TriageVisual = () => {
           </div>
         </motion.div>
       ))}
-      {shown < 2 && (
-        <div className="flex justify-start">
-          <div className="bg-beige px-4 py-3 rounded-2xl rounded-bl-sm flex gap-1">
+      {shown < TYPING.length && (
+        <div className={`flex ${TYPING[shown].who === "caroline" ? "justify-start" : "justify-end"}`}>
+          <div className={`px-4 py-3 rounded-2xl flex gap-1 ${TYPING[shown].who === "caroline" ? "bg-beige rounded-bl-sm" : "bg-terracotta/30 rounded-br-sm"}`}>
             <span className="w-1.5 h-1.5 rounded-full bg-taupe animate-bounce" style={{ animationDelay: "0s" }} />
             <span className="w-1.5 h-1.5 rounded-full bg-taupe animate-bounce" style={{ animationDelay: "0.15s" }} />
             <span className="w-1.5 h-1.5 rounded-full bg-taupe animate-bounce" style={{ animationDelay: "0.3s" }} />
@@ -232,7 +234,7 @@ const TriageVisual = () => {
           </div>
           <div className="flex justify-between text-sm py-1">
             <span className="text-taupe">Urgency</span>
-            <span className="font-medium">🔴 Emergency</span>
+            <span className="font-medium">🟡 Non-emergency</span>
           </div>
         </motion.div>
       )}
