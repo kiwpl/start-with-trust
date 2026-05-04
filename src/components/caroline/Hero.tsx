@@ -11,8 +11,8 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
           <p className="eyebrow">Caroline · After-hours voice agent</p>
-          <h1 className="mt-5 font-serif text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02] text-charcoal">
-            After-hours,
+          <h1 className="mt-5 font-serif text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02] text-charcoal" style={{ fontVariantLigatures: "none" }}>
+            After&#8209;hours,
             <br />
             <span className="text-terracotta italic">handled with grace.</span>
           </h1>
