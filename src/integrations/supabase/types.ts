@@ -537,6 +537,33 @@ export type Database = {
         }
         Relationships: []
       }
+      demo_requests: {
+        Row: {
+          created_at: string
+          email: string
+          id: string
+          name: string
+          property_name: string
+          unit_count: string
+        }
+        Insert: {
+          created_at?: string
+          email: string
+          id?: string
+          name: string
+          property_name: string
+          unit_count: string
+        }
+        Update: {
+          created_at?: string
+          email?: string
+          id?: string
+          name?: string
+          property_name?: string
+          unit_count?: string
+        }
+        Relationships: []
+      }
       edit_logs: {
         Row: {
           coop_id: string | null
