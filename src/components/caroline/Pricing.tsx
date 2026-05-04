@@ -153,6 +153,9 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
                 {t.customPrice && (
                   <p className="text-xs text-taupe mt-1">Tailored to your portfolio</p>
                 )}
+                {annual && t.annualHelper && (
+                  <p className="text-xs text-terracotta mt-1.5">{t.annualHelper}</p>
+                )}
               </div>
 
               <p className="mt-4 text-taupe text-[15px] leading-relaxed">{t.blurb}</p>
