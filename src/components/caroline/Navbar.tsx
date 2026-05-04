@@ -48,24 +48,30 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
 
   return (
     <header
-      className="fixed top-0 inset-x-0 z-40 bg-ivory/70 border-b border-sand/60"
-      style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
+      className="fixed top-0 inset-x-0 z-40"
+      style={{
+        backgroundColor: "rgba(28, 14, 8, 0.75)",
+        backdropFilter: "blur(12px)",
+        WebkitBackdropFilter: "blur(12px)",
+        borderBottom: "1px solid rgba(255,255,255,0.08)",
+      }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-3 no-underline-link">
-          <span className="h-3 w-3 rounded-full bg-terracotta" />
-          <span className="font-serif text-2xl sm:text-[26px] text-charcoal tracking-tight">Caroline</span>
+          <span className="h-3 w-3 rounded-full" style={{ backgroundColor: "#C4724A" }} />
+          <span className="font-serif text-2xl sm:text-[26px] tracking-tight" style={{ color: "#F5F1EB" }}>Caroline</span>
         </a>
         <nav className="hidden md:flex items-center gap-9">
           {LINKS.map(l => (
-            <a key={l.href} href={l.href} className="nav-link text-sm text-charcoal/80">
+            <a key={l.href} href={l.href} className="nav-link text-sm" style={{ color: "#C8B8A8" }}>
               {l.label}
             </a>
           ))}
         </nav>
         <button
           onClick={onBookDemo}
-          className="rounded-full border border-terracotta text-terracotta px-5 py-2 text-sm font-medium hover:bg-terracotta hover:text-white transition-colors"
+          className="rounded-full px-5 py-2 text-sm font-medium transition-colors hover:bg-terracotta hover:text-white"
+          style={{ border: "1px solid rgba(245,241,235,0.5)", color: "#F5F1EB" }}
         >
           Book a Demo
         </button>
