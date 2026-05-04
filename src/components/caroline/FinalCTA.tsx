@@ -15,14 +15,9 @@ export const FinalCTA = ({ onCta }: { onCta: () => void }) => (
           Caroline is ready when you are.
         </p>
 
-        <div className="mt-10 flex flex-wrap justify-center gap-3">
+        <div className="mt-10 flex justify-center">
           <button onClick={onCta}
             className="rounded-full bg-terracotta px-7 py-3.5 text-sm font-medium text-white hover:opacity-90 transition">
-            Get Started
-          </button>
-          <button onClick={onCta}
-            className="rounded-full border px-7 py-3.5 text-sm font-medium transition hover:bg-[#FAF7F2] hover:text-[#2C2420]"
-            style={{ borderColor: "#FAF7F2", color: "#FAF7F2" }}>
             Book a Demo
           </button>
         </div>

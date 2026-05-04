@@ -14,15 +14,17 @@ type Tier = {
   ctaStyle: "filled" | "outline" | "dark";
   popular?: boolean;
   customPrice?: boolean;
+  annualHelper?: string;
 };
 
 const TIERS: Tier[] = [
   {
-    name: "Lobby",
+    name: "Basic",
     tagline: "Essentials",
     monthly: "$149",
     annual: "$1,490",
     priceSuffix: { m: "/mo", a: "/yr" },
+    annualHelper: "~$124/mo · save $298",
     blurb: "For boutique residential properties up to 50 units.",
     features: [
       "Up to 150 inbound calls/month",
@@ -36,11 +38,12 @@ const TIERS: Tier[] = [
     ctaStyle: "outline",
   },
   {
-    name: "Concierge",
+    name: "Pro",
     tagline: "Professional",
     monthly: "$349",
     annual: "$3,490",
     priceSuffix: { m: "/mo", a: "/yr" },
+    annualHelper: "~$291/mo · save $698",
     blurb: "For mid-size properties or small portfolios up to 200 units.",
     features: [
       "Up to 500 inbound calls/month",
@@ -55,7 +58,7 @@ const TIERS: Tier[] = [
     popular: true,
   },
   {
-    name: "Estate",
+    name: "Enterprise",
     tagline: "Enterprise",
     monthly: "Custom",
     annual: "Custom",
@@ -100,7 +103,7 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
             <ToggleBtn active={annual} onClick={() => setAnnual(true)}>
               Annual
               <span className="ml-2 inline-block rounded-full bg-terracotta/15 text-terracotta text-[9px] font-semibold tracking-wider px-2 py-0.5 uppercase">
-                2 months free
+                Save 17%
               </span>
             </ToggleBtn>
           </div>
@@ -149,6 +152,9 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
                 </AnimatePresence>
                 {t.customPrice && (
                   <p className="text-xs text-taupe mt-1">Tailored to your portfolio</p>
+                )}
+                {annual && t.annualHelper && (
+                  <p className="text-xs text-terracotta mt-1.5">{t.annualHelper}</p>
                 )}
               </div>
 
