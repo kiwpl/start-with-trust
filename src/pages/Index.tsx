@@ -1,16 +1,34 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import { useState } from "react";
+import { Navbar } from "@/components/caroline/Navbar";
+import { Hero } from "@/components/caroline/Hero";
+import { HowItWorks } from "@/components/caroline/HowItWorks";
+import { Pricing } from "@/components/caroline/Pricing";
+import { Compare } from "@/components/caroline/Compare";
+import { Testimonials } from "@/components/caroline/Testimonials";
+import { FAQ } from "@/components/caroline/FAQ";
+import { FinalCTA, Footer } from "@/components/caroline/FinalCTA";
+import { DemoModal } from "@/components/caroline/DemoModal";
 
-// IMPORTANT: Fully REPLACE this with your own code
-const PlaceholderIndex = () => {
-  // PLACEHOLDER: Replace this entire return statement with the user's app.
-  // The inline background color is intentionally not part of the design system.
+const Index = () => {
+  const [open, setOpen] = useState(false);
+  const onCta = () => setOpen(true);
+
   return (
-    <div className="flex min-h-screen items-center justify-center" style={{ backgroundColor: '#fcfbf8' }}>
-      <img data-lovable-blank-page-placeholder="REMOVE_THIS" src="/placeholder.svg" alt="Your app will live here!" />
+    <div className="min-h-screen bg-ivory text-charcoal antialiased">
+      <Navbar onBookDemo={onCta} />
+      <main>
+        <Hero onCta={onCta} />
+        <HowItWorks />
+        <Pricing onCta={onCta} />
+        <Compare />
+        <Testimonials />
+        <FAQ />
+        <FinalCTA onCta={onCta} />
+      </main>
+      <Footer onBookDemo={onCta} />
+      <DemoModal open={open} onClose={() => setOpen(false)} />
     </div>
   );
 };
-
-const Index = PlaceholderIndex;
 
 export default Index;
