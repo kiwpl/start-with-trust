@@ -137,3 +137,15 @@ nav a.nav-link.nav-active {
 nav a.nav-link.nav-active::after {
   display: none;
 }
+
+.lets-talk-btn {
+  background: transparent;
+  border: 1.5px solid #2C1810;
+  color: #2C1810;
+  transition: background 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+.lets-talk-btn:hover {
+  background: #C4724A;
+  border-color: #C4724A;
+  color: #ffffff;
+}

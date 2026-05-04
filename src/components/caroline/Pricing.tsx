@@ -182,14 +182,13 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
 
               <button
                 onClick={onCta}
-                className={`mt-8 rounded-full py-3 text-sm font-medium transition ${
+                className={`mt-8 rounded-full py-3 text-sm font-medium ${
                   t.ctaStyle === "filled"
-                    ? "bg-terracotta text-white hover:opacity-90"
+                    ? "bg-terracotta text-white hover:opacity-90 transition"
                     : t.ctaStyle === "outline"
-                    ? "border border-terracotta text-terracotta hover:bg-terracotta hover:text-white"
-                    : "border border-charcoal/80 text-charcoal hover:bg-charcoal hover:text-white"
+                    ? "border border-terracotta text-terracotta hover:bg-terracotta hover:text-white transition"
+                    : "lets-talk-btn"
                 }`}
-                style={t.ctaStyle === "dark" ? { borderColor: "#2C2420" } : undefined}
               >
                 {t.cta}
               </button>
