@@ -4,7 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 const STEPS = [
   { n: "01", title: "Resident Calls", body: "Caroline answers instantly, any time of night." },
   { n: "02", title: "Issue Triaged", body: "She gathers details, assesses urgency in real time." },
-  { n: "03", title: "Coordinator Alerted", body: "The right person is notified immediately." },
+  { n: "03", title: "Coordinator Alerted", body: "In an emergency, the coordinator is called directly. Otherwise, a detailed email summary is sent immediately." },
   { n: "04", title: "Resident Updated", body: "An automated callback closes the loop." },
 ];
 
@@ -169,10 +169,12 @@ const CallVisual = () => (
 );
 
 const TYPING: { who: "resident" | "caroline"; text: string }[] = [
-  { who: "resident", text: "There's water leaking under my kitchen sink." },
-  { who: "caroline", text: "Got it — is the water actively dripping right now, or is it more of a slow drip?" },
-  { who: "resident", text: "It's a slow drip, been going on since yesterday." },
-  { who: "caroline", text: "Okay, noted. I'll log this and notify your coordinator for a non-emergency follow-up." },
+  { who: "resident", text: "My bathroom ceiling is flooding — water is pouring through, I don't know what to do." },
+  { who: "caroline", text: "Okay, I need you to stay calm. Is the water actively pouring right now, or has it slowed down?" },
+  { who: "resident", text: "It's still pouring, it's getting worse." },
+  { who: "caroline", text: "Got it. Can I get your name and unit number quickly?" },
+  { who: "resident", text: "It's Sarah, unit 612." },
+  { who: "caroline", text: "Thank you Sarah. I'm logging this as an emergency and the coordinator is being contacted right now." },
 ];
 
 const TriageVisual = () => {
@@ -181,11 +183,13 @@ const TriageVisual = () => {
 
   useEffect(() => {
     const timers = [
-      setTimeout(() => setShown(1), 800),
-      setTimeout(() => setShown(2), 2200),
-      setTimeout(() => setShown(3), 3800),
-      setTimeout(() => setShown(4), 5400),
-      setTimeout(() => setShowCard(true), 6800),
+      setTimeout(() => setShown(1), 600),
+      setTimeout(() => setShown(2), 1900),
+      setTimeout(() => setShown(3), 3200),
+      setTimeout(() => setShown(4), 4400),
+      setTimeout(() => setShown(5), 5500),
+      setTimeout(() => setShown(6), 6800),
+      setTimeout(() => setShowCard(true), 8200),
     ];
     return () => timers.forEach(clearTimeout);
   }, []);
@@ -230,11 +234,11 @@ const TriageVisual = () => {
           <div className="eyebrow mb-2">Triage</div>
           <div className="flex justify-between text-sm py-1">
             <span className="text-taupe">Issue</span>
-            <span className="text-charcoal font-medium">Water leak · kitchen</span>
+            <span className="text-charcoal font-medium">Flooding · bathroom ceiling</span>
           </div>
           <div className="flex justify-between text-sm py-1">
             <span className="text-taupe">Urgency</span>
-            <span className="font-medium">🟡 Non-emergency</span>
+            <span className="font-medium">🔴 Emergency</span>
           </div>
         </motion.div>
       )}
