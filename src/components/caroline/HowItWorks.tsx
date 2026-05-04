@@ -271,17 +271,17 @@ const AlertVisual = () => {
       </div>
       {/* Subject */}
       <div className="px-5 pt-4">
-        <p className="font-serif text-[15px] text-charcoal font-semibold leading-snug">
-          New Maintenance Request — Riverside Lofts — Unit 4B (Water Leak)
+        <p className="font-serif text-[15px] font-semibold leading-snug text-red-600">
+          🚨 EMERGENCY Maintenance Request — Courtland Mews — Unit 612 (Flooding)
         </p>
       </div>
       {/* Body */}
       <div className="px-5 py-4 space-y-1.5 text-[13px] leading-relaxed">
         {[
-          ["Caller", "John"],
+          ["Caller", "Sarah"],
           ["Caller Phone", "+1 (647) 478-7502"],
-          ["Unit", "4B"],
-          ["Issue Type", "Plumbing — Water Leak"],
+          ["Unit", "612"],
+          ["Issue Type", "Plumbing — Active Flooding"],
         ].map(([k, v]) => (
           <div key={k} className="flex gap-2">
             <span className="text-taupe w-[110px] shrink-0">{k}:</span>
@@ -291,12 +291,12 @@ const AlertVisual = () => {
         <div className="flex gap-2">
           <span className="text-taupe w-[110px] shrink-0">Description:</span>
           <span className="text-charcoal">
-            Resident reported a slow drip under the kitchen sink, ongoing since yesterday. Non-urgent, no immediate risk.
+            Resident reported water actively pouring through the bathroom ceiling, ongoing and worsening at time of call. Logged as immediate emergency. Coordinator contacted directly.
           </span>
         </div>
         <div className="flex gap-2">
-          <span className="text-taupe w-[110px] shrink-0">Tier:</span>
-          <span className="text-charcoal">1 (Non-emergency)</span>
+          <span className="text-taupe w-[110px] shrink-0">Urgency:</span>
+          <span className="text-red-600 font-medium">Immediate (Emergency)</span>
         </div>
       </div>
     </motion.div>
