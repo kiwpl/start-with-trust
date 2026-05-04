@@ -82,8 +82,18 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
   const [annual, setAnnual] = useState(false);
 
   return (
-    <section id="pricing" className="py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section
+      id="pricing"
+      className="relative py-28"
+      style={{
+        backgroundImage: "url('https://as2.ftcdn.net/jpg/05/75/03/73/1000_F_575037343_vhp5rQzfIseWVxWErMiAw9UmG3Y89p3u.jpg')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0" style={{ background: "rgba(245, 241, 235, 0.87)", zIndex: 0 }} />
+      <div className="relative z-[1] mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}
