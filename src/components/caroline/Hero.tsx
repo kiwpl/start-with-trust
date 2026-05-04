@@ -32,9 +32,9 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.18em] uppercase text-taupe">
             <span>24/7 live answer</span>
             <span className="text-sand">|</span>
-            <span>Built on Retell AI</span>
+            <span>Built with Retell AI</span>
             <span className="text-sand">|</span>
-            <span>Sub-30s triage</span>
+            <span>AI triage</span>
           </div>
         </motion.div>
 
@@ -58,12 +58,12 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
             </div>
 
             <p className="mt-5 font-serif text-xl leading-snug text-charcoal italic">
-              "Hello, this is Caroline with Maple Court. How can I help you this evening?"
+              "Hello, this is Caroline with Courtland Mews. How can I help you this evening?"
             </p>
 
             <dl className="mt-6 divide-y divide-sand text-sm">
-              <Row k="Caller" v="Unit 4B" />
-              <Row k="Issue" v="Water leak · kitchen" />
+              <Row k="Caller" v="Unit 612" />
+              <Row k="Issue" v="Flooding · bathroom ceiling" />
               <Row k="Urgency" v={<span className="text-terracotta font-medium">Emergency</span>} />
               <Row k="Coordinator" v="Dispatched · 11s" />
             </dl>

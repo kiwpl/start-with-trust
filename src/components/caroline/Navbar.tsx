@@ -52,9 +52,9 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
       style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5 no-underline-link">
-          <span className="h-2.5 w-2.5 rounded-full bg-terracotta" />
-          <span className="font-serif text-xl text-charcoal tracking-tight">Caroline</span>
+        <a href="#" className="flex items-center gap-3 no-underline-link">
+          <span className="h-3 w-3 rounded-full bg-terracotta" />
+          <span className="font-serif text-2xl sm:text-[26px] text-charcoal tracking-tight">Caroline</span>
         </a>
         <nav className="hidden md:flex items-center gap-9">
           {LINKS.map(l => (
