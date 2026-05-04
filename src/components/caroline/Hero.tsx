@@ -3,20 +3,34 @@ import { Phone } from "lucide-react";
 
 export const Hero = ({ onCta }: { onCta: () => void }) => {
   return (
-    <section className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32">
-      <div className="absolute inset-0 -z-10 bg-gradient-to-b from-ivory via-ivory to-[hsl(var(--background-warm))]/40" />
-      <div className="mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
+    <section
+      className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right, rgba(28,14,8,0.82) 45%, rgba(28,14,8,0.3) 100%)",
+          zIndex: 0,
+        }}
+      />
+      <div className="relative z-[1] mx-auto max-w-7xl px-6 lg:px-10 grid lg:grid-cols-[1.1fr_1fr] gap-16 items-center">
         <motion.div
           initial={{ opacity: 0, y: 24 }} animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, ease: [0.22, 1, 0.36, 1] }}
         >
-          <p className="eyebrow">Caroline · After-hours voice agent</p>
-          <h1 className="mt-5 font-serif text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02] text-charcoal" style={{ fontVariantLigatures: "none" }}>
+          <p className="eyebrow" style={{ color: "#C4724A" }}>Caroline · After-hours voice agent</p>
+          <h1 className="mt-5 font-serif text-5xl sm:text-6xl lg:text-[5.2rem] leading-[1.02]" style={{ fontVariantLigatures: "none", color: "#F5F1EB" }}>
             After&#8209;hours,
             <br />
-            <span className="text-terracotta italic">handled with grace.</span>
+            <span className="italic" style={{ color: "#C4724A" }}>handled with grace.</span>
           </h1>
-          <p className="mt-7 text-lg text-taupe max-w-xl leading-relaxed">
+          <p className="mt-7 text-lg max-w-xl leading-relaxed" style={{ color: "#C8B8A8" }}>
             Caroline answers every maintenance call your residents make after hours —
             calmly triaging the issue, reaching the right coordinator, and following up
             so no one is left waiting in the dark.
@@ -29,11 +43,11 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
             </button>
           </div>
 
-          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.18em] uppercase text-taupe">
+          <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.18em] uppercase" style={{ color: "#A89888" }}>
             <span>24/7 live answer</span>
-            <span className="text-sand">|</span>
+            <span style={{ color: "#A89888", opacity: 0.5 }}>|</span>
             <span>Built with Retell AI</span>
-            <span className="text-sand">|</span>
+            <span style={{ color: "#A89888", opacity: 0.5 }}>|</span>
             <span>AI triage</span>
           </div>
         </motion.div>
