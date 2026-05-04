@@ -8,7 +8,7 @@ const STEPS = [
 ];
 
 export const HowItWorks = () => (
-  <section id="how" className="bg-beige py-28">
+  <section id="how-it-works" className="bg-beige py-28">
     <div className="mx-auto max-w-7xl px-6 lg:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
