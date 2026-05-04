@@ -3,9 +3,9 @@ import { motion, AnimatePresence } from "framer-motion";
 
 const STEPS = [
   { n: "01", title: "Resident Calls", body: "Caroline answers instantly, any time of night." },
-  { n: "02", title: "Issue Triaged", body: "She gathers details, assesses urgency in real time." },
+  { n: "02", title: "Issue Triaged", body: "Caroline gathers details and assesses urgency in real time." },
   { n: "03", title: "Coordinator Alerted", body: "A detailed email summary is always sent to the coordinator. In a true emergency, Caroline also calls them directly." },
-  { n: "04", title: "Resident Updated", body: "An automated callback closes the loop." },
+  { n: "04", title: "Resident Updated", body: "Caroline calls the resident back once the coordinator has responded, relaying their decision and giving the resident a heads-up that the coordinator may also reach out to them directly." },
 ];
 
 const DURATION = 10000;
