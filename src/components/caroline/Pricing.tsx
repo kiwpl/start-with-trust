@@ -22,9 +22,9 @@ const TIERS: Tier[] = [
     name: "Basic",
     tagline: "Essentials",
     monthly: "$149",
-    annual: "$1,490",
+    annual: "$1,240",
     priceSuffix: { m: "/mo", a: "/yr" },
-    annualHelper: "~$124/mo · save $298",
+    annualHelper: "~$103/mo · save $548",
     blurb: "For boutique residential properties up to 50 units.",
     features: [
       "Up to 150 inbound calls/month",
@@ -40,9 +40,9 @@ const TIERS: Tier[] = [
     name: "Pro",
     tagline: "Professional",
     monthly: "$349",
-    annual: "$3,490",
+    annual: "$2,908",
     priceSuffix: { m: "/mo", a: "/yr" },
-    annualHelper: "~$291/mo · save $698",
+    annualHelper: "~$242/mo · save $1,280",
     blurb: "For mid-size properties or small portfolios up to 200 units.",
     features: [
       "Up to 300 inbound calls/month",
