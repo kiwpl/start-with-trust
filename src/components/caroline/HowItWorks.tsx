@@ -243,38 +243,59 @@ const TriageVisual = () => {
 };
 
 const AlertVisual = () => {
-  const [delivered, setDelivered] = useState(false);
-  useEffect(() => {
-    const t = setTimeout(() => setDelivered(true), 1400);
-    return () => clearTimeout(t);
-  }, []);
   return (
-    <div className="max-w-sm mx-auto">
-      <div className="text-xs uppercase tracking-[0.2em] text-taupe mb-3">SMS · To Mike (Coordinator)</div>
-      <motion.div
-        initial={{ opacity: 0, y: 12 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.4 }}
-        className="bg-[#3478F6] text-white rounded-2xl rounded-br-sm px-4 py-3 ml-auto max-w-[90%]"
-      >
-        <p className="text-[14px] leading-relaxed">
-          Emergency: Water leak in Unit 4B kitchen. Resident on line.
-        </p>
-      </motion.div>
-      <div className="mt-2 flex items-center justify-end gap-2 text-xs text-taupe">
-        {delivered && (
-          <motion.span
-            initial={{ scale: 0, opacity: 0 }}
-            animate={{ scale: 1, opacity: 1 }}
-            transition={{ duration: 0.3 }}
-            className="inline-flex items-center justify-center w-4 h-4 rounded-full bg-green-500 text-white text-[10px]"
-          >
-            ✓
-          </motion.span>
-        )}
-        <span>{delivered ? "Delivered · 3s ago" : "Sending…"}</span>
+    <motion.div
+      initial={{ opacity: 0, y: 12 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.4 }}
+      className="max-w-lg mx-auto rounded-xl border border-sand bg-white shadow-soft overflow-hidden"
+    >
+      {/* Email header */}
+      <div className="flex items-start gap-3 px-5 py-4 border-b border-sand">
+        <div className="w-9 h-9 rounded-full bg-terracotta text-white flex items-center justify-center font-serif text-sm shrink-0">
+          C
+        </div>
+        <div className="flex-1 min-w-0">
+          <div className="flex items-center justify-between gap-2">
+            <p className="text-[13px] text-charcoal font-medium truncate">
+              Caroline AI <span className="text-taupe font-normal">&lt;onboarding@resend.dev&gt;</span>
+            </p>
+            <span className="text-[11px] text-taupe shrink-0">now</span>
+          </div>
+          <p className="text-[13px] text-taupe mt-0.5">to mike@property.com</p>
+        </div>
       </div>
-    </div>
+      {/* Subject */}
+      <div className="px-5 pt-4">
+        <p className="font-serif text-[15px] text-charcoal font-semibold leading-snug">
+          New Maintenance Request — Riverside Lofts — Unit 4B (Water Leak)
+        </p>
+      </div>
+      {/* Body */}
+      <div className="px-5 py-4 space-y-1.5 text-[13px] leading-relaxed">
+        {[
+          ["Caller", "John"],
+          ["Caller Phone", "+1 (647) 478-7502"],
+          ["Unit", "4B"],
+          ["Issue Type", "Plumbing — Water Leak"],
+        ].map(([k, v]) => (
+          <div key={k} className="flex gap-2">
+            <span className="text-taupe w-[110px] shrink-0">{k}:</span>
+            <span className="text-charcoal">{v}</span>
+          </div>
+        ))}
+        <div className="flex gap-2">
+          <span className="text-taupe w-[110px] shrink-0">Description:</span>
+          <span className="text-charcoal">
+            Resident reported a slow drip under the kitchen sink, ongoing since yesterday. Non-urgent, no immediate risk.
+          </span>
+        </div>
+        <div className="flex gap-2">
+          <span className="text-taupe w-[110px] shrink-0">Tier:</span>
+          <span className="text-charcoal">1 (Non-emergency)</span>
+        </div>
+      </div>
+    </motion.div>
   );
 };
 
@@ -326,9 +347,9 @@ const UpdateVisual = () => {
               </svg>
               <p className="font-serif text-xl text-charcoal leading-snug">Issue logged.</p>
               <p className="text-sm text-taupe mt-2 leading-relaxed">
-                Coordinator dispatched.
+                Coordinator notified.
                 <br />
-                ETA 20 min.
+                Caroline will follow up with you shortly.
               </p>
             </motion.div>
           )}
