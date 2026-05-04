@@ -1,32 +1,49 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 
 const LINKS = [
-  { label: "How it Works", href: "#how", id: "how" },
+  { label: "How it Works", href: "#how-it-works", id: "how-it-works" },
   { label: "Pricing", href: "#pricing", id: "pricing" },
   { label: "Compare", href: "#compare", id: "compare" },
   { label: "FAQ", href: "#faq", id: "faq" },
 ];
 
+const SECTION_IDS = LINKS.map(l => l.id);
+
 export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
-  const [active, setActive] = useState<string>("");
-
   useEffect(() => {
-    const sections = LINKS
-      .map(l => document.getElementById(l.id))
-      .filter((el): el is HTMLElement => !!el);
+    let trigger = window.innerHeight * 0.3;
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        const visible = entries
-          .filter(e => e.isIntersecting)
-          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
-        if (visible[0]) setActive(visible[0].target.id);
-      },
-      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
-    );
+    const getActive = () => {
+      let active = SECTION_IDS[0];
+      for (const id of SECTION_IDS) {
+        const el = document.getElementById(id);
+        if (!el) continue;
+        if (el.getBoundingClientRect().top <= trigger) active = id;
+      }
+      return active;
+    };
 
-    sections.forEach(s => observer.observe(s));
-    return () => observer.disconnect();
+    const update = () => {
+      const active = getActive();
+      SECTION_IDS.forEach(id => {
+        const link = document.querySelector(`nav a[href="#${id}"]`);
+        if (!link) return;
+        link.classList.toggle("nav-active", id === active);
+      });
+    };
+
+    const onResize = () => {
+      trigger = window.innerHeight * 0.3;
+      update();
+    };
+
+    update();
+    window.addEventListener("scroll", update, { passive: true });
+    window.addEventListener("resize", onResize);
+    return () => {
+      window.removeEventListener("scroll", update);
+      window.removeEventListener("resize", onResize);
+    };
   }, []);
 
   return (
@@ -35,21 +52,13 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
       style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
-        <a href="#" className="flex items-center gap-2.5">
+        <a href="#" className="flex items-center gap-2.5 no-underline-link">
           <span className="h-2.5 w-2.5 rounded-full bg-terracotta" />
           <span className="font-serif text-xl text-charcoal tracking-tight">Caroline</span>
         </a>
         <nav className="hidden md:flex items-center gap-9">
           {LINKS.map(l => (
-            <a
-              key={l.href}
-              href={l.href}
-              className={`text-sm transition-colors ${
-                active === l.id
-                  ? "text-terracotta font-medium"
-                  : "text-charcoal/80 hover:text-terracotta"
-              }`}
-            >
+            <a key={l.href} href={l.href} className="nav-link text-sm text-charcoal/80">
               {l.label}
             </a>
           ))}
