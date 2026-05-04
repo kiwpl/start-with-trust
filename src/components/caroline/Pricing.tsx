@@ -38,11 +38,12 @@ const TIERS: Tier[] = [
     ctaStyle: "outline",
   },
   {
-    name: "Concierge",
+    name: "Pro",
     tagline: "Professional",
     monthly: "$349",
     annual: "$3,490",
     priceSuffix: { m: "/mo", a: "/yr" },
+    annualHelper: "~$291/mo · save $698",
     blurb: "For mid-size properties or small portfolios up to 200 units.",
     features: [
       "Up to 500 inbound calls/month",
@@ -57,7 +58,7 @@ const TIERS: Tier[] = [
     popular: true,
   },
   {
-    name: "Estate",
+    name: "Enterprise",
     tagline: "Enterprise",
     monthly: "Custom",
     annual: "Custom",
