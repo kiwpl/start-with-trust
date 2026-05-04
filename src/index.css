@@ -102,3 +102,29 @@
     @apply text-xs font-medium tracking-[0.2em] uppercase text-terracotta;
   }
 }
+
+nav a.nav-link {
+  position: relative;
+  text-decoration: none;
+  transition: color 0.15s ease;
+}
+nav a.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 1.5px;
+  background-color: #ffffff;
+  transition: width 0.25s ease;
+}
+nav a.nav-link:hover::after {
+  width: 100%;
+}
+nav a.nav-link.nav-active {
+  color: #C4724A;
+}
+nav a.nav-link.nav-active::after {
+  display: none;
+}

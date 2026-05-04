@@ -38,7 +38,7 @@ export const Footer = ({ onBookDemo }: { onBookDemo: () => void }) => (
         </div>
         <nav className="flex flex-wrap items-center justify-center gap-7 text-sm">
           {[
-            ["How it Works", "#how"],
+            ["How it Works", "#how-it-works"],
             ["Pricing", "#pricing"],
             ["Compare", "#compare"],
             ["FAQ", "#faq"],
