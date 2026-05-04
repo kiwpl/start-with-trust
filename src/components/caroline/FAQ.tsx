@@ -32,8 +32,18 @@ const QA = [
 export const FAQ = () => {
   const [open, setOpen] = useState<number | null>(0);
   return (
-    <section id="faq" className="bg-beige py-28">
-      <div className="mx-auto max-w-3xl px-6 lg:px-10">
+    <section
+      id="faq"
+      className="relative py-28"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1464082354059-27db6ce50048?w=1920&q=80')",
+        backgroundSize: "cover",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div className="absolute inset-0" style={{ background: "rgba(245, 241, 235, 0.88)", zIndex: 0 }} />
+      <div className="relative z-[1] mx-auto max-w-3xl px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }} transition={{ duration: 0.6 }}
