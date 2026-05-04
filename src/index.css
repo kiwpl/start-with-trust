@@ -113,6 +113,8 @@ nav a.nav-link {
   position: relative;
   text-decoration: none;
   transition: color 0.15s ease;
+  font-weight: 500;
+  font-size: 15px;
 }
 nav a.nav-link::after {
   content: '';
