@@ -349,7 +349,7 @@ const UpdateVisual = () => {
                 Update from your coordinator
               </p>
               <p className="text-[13px] text-taupe mt-2 leading-relaxed">
-                Your coordinator has reviewed the issue and confirmed they will arrange for a plumber to assess the leak. You may also receive a direct call from them — your phone number has been shared so they can follow up with you directly.
+                Your coordinator has reviewed the issue and confirmed they will arrange for a plumber to assess the leak. You may also receive a direct call from them.
               </p>
               <p className="eyebrow mt-3 text-[10px]">Logged · Coordinator confirmed</p>
             </motion.div>
