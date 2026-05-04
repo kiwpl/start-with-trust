@@ -1,31 +1,38 @@
 import { useEffect, useState } from "react";
-import { motion, useMotionValueEvent, useScroll } from "framer-motion";
+
+const LINKS = [
+  { label: "How it Works", href: "#how", id: "how" },
+  { label: "Pricing", href: "#pricing", id: "pricing" },
+  { label: "Compare", href: "#compare", id: "compare" },
+  { label: "FAQ", href: "#faq", id: "faq" },
+];
 
 export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
-  const { scrollY } = useScroll();
-  const [hidden, setHidden] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [active, setActive] = useState<string>("");
 
-  useMotionValueEvent(scrollY, "change", (latest) => {
-    const prev = scrollY.getPrevious() ?? 0;
-    setHidden(latest > prev && latest > 120);
-    setScrolled(latest > 24);
-  });
+  useEffect(() => {
+    const sections = LINKS
+      .map(l => document.getElementById(l.id))
+      .filter((el): el is HTMLElement => !!el);
 
-  const links = [
-    { label: "How it Works", href: "#how" },
-    { label: "Pricing", href: "#pricing" },
-    { label: "Compare", href: "#compare" },
-    { label: "FAQ", href: "#faq" },
-  ];
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter(e => e.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio);
+        if (visible[0]) setActive(visible[0].target.id);
+      },
+      { rootMargin: "-40% 0px -50% 0px", threshold: [0, 0.25, 0.5, 0.75, 1] }
+    );
+
+    sections.forEach(s => observer.observe(s));
+    return () => observer.disconnect();
+  }, []);
 
   return (
-    <motion.header
-      animate={{ y: hidden ? -100 : 0 }}
-      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}
-      className={`fixed top-0 inset-x-0 z-40 transition-colors duration-300 ${
-        scrolled ? "bg-ivory/80 backdrop-blur-md border-b border-sand" : "bg-transparent"
-      }`}
+    <header
+      className="fixed top-0 inset-x-0 z-40 bg-ivory/70 border-b border-sand/60"
+      style={{ backdropFilter: "blur(12px)", WebkitBackdropFilter: "blur(12px)" }}
     >
       <div className="mx-auto max-w-7xl px-6 lg:px-10 h-16 flex items-center justify-between">
         <a href="#" className="flex items-center gap-2.5">
@@ -33,9 +40,16 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
           <span className="font-serif text-xl text-charcoal tracking-tight">Caroline</span>
         </a>
         <nav className="hidden md:flex items-center gap-9">
-          {links.map(l => (
-            <a key={l.href} href={l.href}
-              className="text-sm text-charcoal/80 hover:text-terracotta transition-colors">
+          {LINKS.map(l => (
+            <a
+              key={l.href}
+              href={l.href}
+              className={`text-sm transition-colors ${
+                active === l.id
+                  ? "text-terracotta font-medium"
+                  : "text-charcoal/80 hover:text-terracotta"
+              }`}
+            >
               {l.label}
             </a>
           ))}
@@ -47,6 +61,6 @@ export const Navbar = ({ onBookDemo }: { onBookDemo: () => void }) => {
           Book a Demo
         </button>
       </div>
-    </motion.header>
+    </header>
   );
 };
