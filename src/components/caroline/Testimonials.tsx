@@ -19,13 +19,13 @@ export const Testimonials = () => (
   <section
     className="relative py-28"
     style={{
-      backgroundImage: "url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1920&q=80')",
+      backgroundImage: "url('https://images.unsplash.com/photo-1460317442991-0ec209397118?w=1920&q=80')",
       backgroundSize: "cover",
-      backgroundPosition: "center",
+      backgroundPosition: "center top",
       backgroundRepeat: "no-repeat",
     }}
   >
-    <div className="absolute inset-0" style={{ background: "rgba(245, 241, 235, 0.85)", zIndex: 0 }} />
+    <div className="absolute inset-0" style={{ background: "rgba(245, 241, 235, 0.83)", zIndex: 0 }} />
     <div className="relative z-[1] mx-auto max-w-7xl px-6 lg:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
@@ -34,7 +34,7 @@ export const Testimonials = () => (
       >
         <p className="eyebrow">What managers are saying</p>
         <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-charcoal leading-[1.05]">
-          Trusted by properties across the country.
+          Trusted by properties across Canada.
         </h2>
       </motion.div>
 
