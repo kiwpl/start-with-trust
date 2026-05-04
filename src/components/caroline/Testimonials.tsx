@@ -16,8 +16,17 @@ const T = [
 ];
 
 export const Testimonials = () => (
-  <section className="py-28">
-    <div className="mx-auto max-w-7xl px-6 lg:px-10">
+  <section
+    className="relative py-28"
+    style={{
+      backgroundImage: "url('https://images.unsplash.com/photo-1551836022-4c4c79ecde51?w=1920&q=80')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+      backgroundRepeat: "no-repeat",
+    }}
+  >
+    <div className="absolute inset-0" style={{ background: "rgba(245, 241, 235, 0.85)", zIndex: 0 }} />
+    <div className="relative z-[1] mx-auto max-w-7xl px-6 lg:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }} transition={{ duration: 0.6 }}
