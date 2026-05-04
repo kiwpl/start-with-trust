@@ -10,7 +10,7 @@
     --background: 38 35% 97%;          /* #FAF7F2 ivory */
     --background-warm: 35 30% 92%;     /* #F2EDE4 warm beige */
     --foreground: 22 18% 15%;          /* #2C2420 deep warm charcoal */
-    --muted-text: 28 16% 49%;          /* #8C7B6B warm taupe */
+    --muted-text: 22 16% 36%;          /* #6B5B4E warm taupe (darker for legibility) */
 
     --card: 36 50% 98%;                /* #FFFCF8 soft warm white */
     --card-foreground: 22 18% 15%;
@@ -57,10 +57,16 @@
     @apply bg-background text-foreground;
     font-family: 'Inter', system-ui, sans-serif;
     font-feature-settings: 'cv11', 'ss01';
+    font-weight: 400;
+    font-size: 17px;
   }
   h1, h2, h3, h4 {
     font-family: 'Cormorant Garamond', Georgia, serif;
     letter-spacing: -0.01em;
+    font-weight: 500;
+  }
+  button {
+    font-weight: 500;
   }
 }
 
@@ -99,7 +105,8 @@
     border-color: hsl(var(--card-border));
   }
   .eyebrow {
-    @apply text-xs font-medium tracking-[0.2em] uppercase text-terracotta;
+    @apply font-medium tracking-[0.2em] uppercase text-terracotta;
+    font-size: 12px;
   }
 }
 
@@ -107,6 +114,8 @@ nav a.nav-link {
   position: relative;
   text-decoration: none;
   transition: color 0.15s ease;
+  font-weight: 500;
+  font-size: 15px;
 }
 nav a.nav-link::after {
   content: '';
