@@ -16,15 +16,24 @@ const ROWS: { feature: string; cells: [Cell, Cell, Cell] }[] = [
 ];
 
 export const Compare = () => (
-  <section id="compare" className="bg-beige py-28">
-    <div className="mx-auto max-w-6xl px-6 lg:px-10">
+  <section
+    id="compare"
+    className="relative py-28"
+    style={{
+      backgroundImage: "url('/compare-bg.jpg')",
+      backgroundSize: "cover",
+      backgroundPosition: "center",
+    }}
+  >
+    <div className="absolute inset-0 bg-charcoal/70" />
+    <div className="relative z-10 mx-auto max-w-6xl px-6 lg:px-10">
       <motion.div
         initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }} transition={{ duration: 0.6 }}
         className="text-center max-w-2xl mx-auto"
       >
         <p className="eyebrow">Compare plans</p>
-        <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-charcoal leading-[1.05]">
+        <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-white leading-[1.05]">
           Find the fit for your portfolio.
         </h2>
       </motion.div>
