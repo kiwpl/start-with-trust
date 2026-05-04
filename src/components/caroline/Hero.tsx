@@ -27,10 +27,6 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
               className="rounded-full bg-terracotta px-7 py-3.5 text-sm font-medium text-white hover:opacity-90 transition shadow-soft">
               Get Started
             </button>
-            <button onClick={onCta}
-              className="rounded-full border border-terracotta text-terracotta px-7 py-3.5 text-sm font-medium hover:bg-terracotta hover:text-white transition-colors">
-              Book a Demo
-            </button>
           </div>
 
           <div className="mt-10 flex flex-wrap gap-x-6 gap-y-2 text-[11px] tracking-[0.18em] uppercase text-taupe">
