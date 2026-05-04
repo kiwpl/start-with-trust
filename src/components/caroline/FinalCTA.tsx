@@ -9,7 +9,7 @@ export const FinalCTA = ({ onCta: _onCta }: { onCta: () => void }) => (
       >
         <h2 className="font-serif text-5xl sm:text-6xl leading-[1.05]"
           style={{ color: "#FAF7F2" }}>
-          <span style={{ color: "#C4724A" }}>Never miss</span> a <span style={{ fontSize: "1.4em", color: "#C4724A", lineHeight: 1, display: "inline-block", verticalAlign: "middle" }}>2</span>am call again.
+          <span style={{ color: "#C4724A" }}>Never miss</span> a <span style={{ fontSize: "1.5em", color: "#F5F1EB", lineHeight: "inherit", verticalAlign: "baseline" }}>2</span>am call again.
         </h2>
         <p className="mt-5 text-lg" style={{ color: "#C7B8A8" }}>
           Caroline is ready when you are.
