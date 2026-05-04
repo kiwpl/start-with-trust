@@ -6,7 +6,7 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
     <section
       className="relative overflow-hidden pt-32 pb-24 lg:pt-40 lg:pb-32"
       style={{
-        backgroundImage: "url('https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=1920&q=80')",
+        backgroundImage: "url('https://images.unsplash.com/photo-1574362848149-11496d93a7c7?w=1920&q=80')",
         backgroundSize: "cover",
         backgroundPosition: "center",
         backgroundRepeat: "no-repeat",
