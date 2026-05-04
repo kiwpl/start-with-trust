@@ -103,7 +103,7 @@ export const Pricing = ({ onCta }: { onCta: () => void }) => {
             <ToggleBtn active={annual} onClick={() => setAnnual(true)}>
               Annual
               <span className="ml-2 inline-block rounded-full bg-terracotta/15 text-terracotta text-[9px] font-semibold tracking-wider px-2 py-0.5 uppercase">
-                2 months free
+                Save 17%
               </span>
             </ToggleBtn>
           </div>
