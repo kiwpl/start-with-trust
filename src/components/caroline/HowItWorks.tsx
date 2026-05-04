@@ -331,7 +331,7 @@ const UpdateVisual = () => {
               exit={{ opacity: 0 }}
               className="flex-1 flex flex-col items-center justify-center px-5 text-center"
             >
-              <svg width="48" height="48" viewBox="0 0 48 48" className="mb-4">
+              <svg width="40" height="40" viewBox="0 0 48 48" className="mb-3">
                 <circle cx="24" cy="24" r="22" fill="none" stroke="#22c55e" strokeWidth="2" opacity="0.25" />
                 <motion.path
                   d="M14 25 L21 32 L34 17"
@@ -345,12 +345,13 @@ const UpdateVisual = () => {
                   transition={{ duration: 0.6, ease: "easeOut" }}
                 />
               </svg>
-              <p className="font-serif text-xl text-charcoal leading-snug">Issue logged.</p>
-              <p className="text-sm text-taupe mt-2 leading-relaxed">
-                Coordinator notified.
-                <br />
-                Caroline will follow up with you shortly.
+              <p className="font-serif text-lg text-charcoal leading-snug font-medium">
+                Update from your coordinator
               </p>
+              <p className="text-[13px] text-taupe mt-2 leading-relaxed">
+                Your coordinator has reviewed the issue and confirmed they will arrange for a plumber to assess the leak. You may also receive a direct call from them — your phone number has been shared so they can follow up with you directly.
+              </p>
+              <p className="eyebrow mt-3 text-[10px]">Logged · Coordinator confirmed</p>
             </motion.div>
           )}
         </AnimatePresence>
