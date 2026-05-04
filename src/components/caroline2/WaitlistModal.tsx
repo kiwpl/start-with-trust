@@ -43,7 +43,7 @@ export const WaitlistModal = ({
             initial={{ y: 16, opacity: 0, scale: 0.98 }}
             animate={{ y: 0, opacity: 1, scale: 1 }}
             exit={{ y: 16, opacity: 0, scale: 0.98 }}
-            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] }}
+            transition={{ duration: 0.25, ease: [0.22, 1, 0.36, 1] as const }}
             className="relative w-full max-w-md rounded-3xl bg-card p-8 shadow-card"
             onClick={(e) => e.stopPropagation()}
           >

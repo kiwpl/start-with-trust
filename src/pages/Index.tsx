@@ -11,7 +11,7 @@ const fadeUp = {
   initial: { opacity: 0, y: 24 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] },
+  transition: { duration: 0.6, ease: [0.22, 1, 0.36, 1] as const },
 };
 
 /* -------------------------------- Navbar -------------------------------- */
@@ -115,7 +115,7 @@ const Hero = ({ onCta }: { onCta: () => void }) => (
       {/* Floating call card */}
       <motion.div
         initial={{ opacity: 0, y: 40 }} animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] }}
+        transition={{ duration: 0.8, delay: 0.3, ease: [0.22, 1, 0.36, 1] as const }}
         className="relative mt-16 mx-auto max-w-md rounded-3xl bg-card border border-border shadow-card p-6 text-left"
       >
         <div className="flex items-center justify-between">
@@ -438,7 +438,7 @@ const FAQ = () => {
                   {isOpen && (
                     <motion.div initial={{ height: 0, opacity: 0 }} animate={{ height: "auto", opacity: 1 }}
                       exit={{ height: 0, opacity: 0 }}
-                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] }}>
+                      transition={{ duration: 0.3, ease: [0.22, 1, 0.36, 1] as const }}>
                       <p className="px-5 pb-5 text-muted-foreground leading-relaxed text-[15px]">{item.a}</p>
                     </motion.div>
                   )}
