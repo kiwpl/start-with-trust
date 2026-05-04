@@ -46,8 +46,24 @@ export const HowItWorks = () => {
   };
 
   return (
-    <section id="how-it-works" className="bg-beige py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-10">
+    <section
+      id="how-it-works"
+      className="relative py-28"
+      style={{
+        backgroundImage: "url('https://images.unsplash.com/photo-1677442135703-1787eea5ce01?w=1920&q=80')",
+        backgroundSize: "cover",
+        backgroundPosition: "center right",
+        backgroundRepeat: "no-repeat",
+      }}
+    >
+      <div
+        className="absolute inset-0"
+        style={{
+          background: "linear-gradient(to right, rgba(20,10,5,0.92) 40%, rgba(20,10,5,0.65) 100%)",
+          zIndex: 0,
+        }}
+      />
+      <div className="relative z-[1] mx-auto max-w-7xl px-6 lg:px-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
@@ -55,8 +71,8 @@ export const HowItWorks = () => {
           transition={{ duration: 0.6 }}
           className="max-w-2xl"
         >
-          <p className="eyebrow">The process</p>
-          <h2 className="mt-3 font-serif text-4xl sm:text-5xl text-charcoal leading-[1.05]">
+          <p className="eyebrow" style={{ color: "#C4724A" }}>The process</p>
+          <h2 className="mt-3 font-serif text-4xl sm:text-5xl leading-[1.05]" style={{ color: "#F5F1EB" }}>
             From the first ring to full resolution.
           </h2>
         </motion.div>
@@ -71,15 +87,14 @@ export const HowItWorks = () => {
                   key={s.n}
                   onClick={() => handleClick(i)}
                   className="block w-full text-left transition-opacity duration-500"
-                  style={{ opacity: isActive ? 1 : 0.35 }}
                 >
-                  <div className="text-xs font-medium tracking-[0.2em] uppercase text-terracotta">
+                  <div className="text-xs font-medium tracking-[0.2em] uppercase" style={{ color: "#C4724A" }}>
                     Step {s.n}
                   </div>
-                  <h3 className="mt-2 font-serif text-2xl sm:text-3xl text-charcoal">
+                  <h3 className="mt-2 font-serif text-2xl sm:text-3xl" style={{ color: isActive ? "#F5F1EB" : "rgba(245,241,235,0.4)" }}>
                     {s.title}
                   </h3>
-                  <p className="mt-2 text-taupe leading-relaxed text-[15px]">{s.body}</p>
+                  <p className="mt-2 leading-relaxed text-[15px]" style={{ color: "rgba(245,241,235,0.65)" }}>{s.body}</p>
                   <div className="mt-4 h-[2px] w-full bg-terracotta/15 overflow-hidden rounded-full">
                     <div
                       className="h-full bg-terracotta"
