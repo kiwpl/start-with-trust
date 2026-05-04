@@ -10,13 +10,9 @@ const ROWS: { feature: string; cells: [Cell, Cell, Cell] }[] = [
   { feature: "Call logs & written summaries", cells: [true, true, true] },
   { feature: "Automated resident callbacks", cells: [false, true, true] },
   { feature: "Call history dashboard", cells: [false, true, true] },
-  { feature: "Custom after-hours greeting", cells: [false, true, true] },
   { feature: "Multi-property support", cells: ["—", "Up to 10", "Unlimited"] },
-  { feature: "Custom voice persona & script", cells: [false, false, true] },
-  { feature: "Full API access", cells: [false, false, true] },
   { feature: "Dedicated account manager", cells: [false, false, true] },
   { feature: "SLA guarantee", cells: [false, false, true] },
-  { feature: "White-label option", cells: [false, false, true] },
 ];
 
 export const Compare = () => (
