@@ -14,15 +14,17 @@ type Tier = {
   ctaStyle: "filled" | "outline" | "dark";
   popular?: boolean;
   customPrice?: boolean;
+  annualHelper?: string;
 };
 
 const TIERS: Tier[] = [
   {
-    name: "Lobby",
+    name: "Basic",
     tagline: "Essentials",
     monthly: "$149",
     annual: "$1,490",
     priceSuffix: { m: "/mo", a: "/yr" },
+    annualHelper: "~$124/mo · save $298",
     blurb: "For boutique residential properties up to 50 units.",
     features: [
       "Up to 150 inbound calls/month",
