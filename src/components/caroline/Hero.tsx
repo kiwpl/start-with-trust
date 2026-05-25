@@ -63,8 +63,8 @@ export const Hero = ({ onCta }: { onCta: () => void }) => {
             <div className="flex items-center justify-between pb-4 border-b border-sand">
               <div className="flex items-center gap-2">
                 <span className="relative flex h-2 w-2">
-                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-terracotta opacity-70" />
-                  <span className="relative inline-flex h-2 w-2 rounded-full bg-terracotta" />
+                  <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-blue-500 opacity-70" />
+                  <span className="relative inline-flex h-2 w-2 rounded-full bg-blue-500" />
                 </span>
                 <span className="text-[10px] font-semibold tracking-[0.2em] text-terracotta">LIVE</span>
               </div>
