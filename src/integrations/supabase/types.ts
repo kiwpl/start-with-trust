@@ -543,6 +543,7 @@ export type Database = {
           email: string
           id: string
           name: string
+          phone: string | null
           property_name: string
           unit_count: string
         }
@@ -551,6 +552,7 @@ export type Database = {
           email: string
           id?: string
           name: string
+          phone?: string | null
           property_name: string
           unit_count: string
         }
@@ -559,6 +561,7 @@ export type Database = {
           email?: string
           id?: string
           name?: string
+          phone?: string | null
           property_name?: string
           unit_count?: string
         }
@@ -735,22 +738,25 @@ export type Database = {
       }
       feature_flags: {
         Row: {
-          description: string | null
+          created_at: string | null
           enabled: boolean | null
+          feature: string
           id: string
-          name: string
+          updated_at: string | null
         }
         Insert: {
-          description?: string | null
+          created_at?: string | null
           enabled?: boolean | null
+          feature: string
           id?: string
-          name: string
+          updated_at?: string | null
         }
         Update: {
-          description?: string | null
+          created_at?: string | null
           enabled?: boolean | null
+          feature?: string
           id?: string
-          name?: string
+          updated_at?: string | null
         }
         Relationships: []
       }
@@ -1454,6 +1460,78 @@ export type Database = {
           },
         ]
       }
+      user_permissions: {
+        Row: {
+          create_new_sop: boolean | null
+          created_at: string | null
+          created_by_me: boolean | null
+          home: boolean | null
+          id: string
+          invite_members: boolean | null
+          my_sops: boolean | null
+          settings: boolean | null
+          team: boolean | null
+          team_feed: boolean | null
+          templates: boolean | null
+          trash: boolean | null
+          updated_at: string | null
+          user_id: string
+        }
+        Insert: {
+          create_new_sop?: boolean | null
+          created_at?: string | null
+          created_by_me?: boolean | null
+          home?: boolean | null
+          id?: string
+          invite_members?: boolean | null
+          my_sops?: boolean | null
+          settings?: boolean | null
+          team?: boolean | null
+          team_feed?: boolean | null
+          templates?: boolean | null
+          trash?: boolean | null
+          updated_at?: string | null
+          user_id: string
+        }
+        Update: {
+          create_new_sop?: boolean | null
+          created_at?: string | null
+          created_by_me?: boolean | null
+          home?: boolean | null
+          id?: string
+          invite_members?: boolean | null
+          my_sops?: boolean | null
+          settings?: boolean | null
+          team?: boolean | null
+          team_feed?: boolean | null
+          templates?: boolean | null
+          trash?: boolean | null
+          updated_at?: string | null
+          user_id?: string
+        }
+        Relationships: []
+      }
+      user_roles: {
+        Row: {
+          created_at: string
+          role: string
+          updated_at: string
+          user_id: string
+        }
+        Insert: {
+          created_at?: string
+          role?: string
+          updated_at?: string
+          user_id: string
+        }
+        Update: {
+          created_at?: string
+          role?: string
+          updated_at?: string
+          user_id?: string
+        }
+        Relationships: []
+      }
       users: {
         Row: {
           auth_user_id: string
@@ -1500,6 +1578,27 @@ export type Database = {
             referencedColumns: ["id"]
           },
         ]
+      }
+      verification_codes: {
+        Row: {
+          code: string
+          created_at: string
+          email: string
+          expires_at: string
+        }
+        Insert: {
+          code: string
+          created_at?: string
+          email: string
+          expires_at: string
+        }
+        Update: {
+          code?: string
+          created_at?: string
+          email?: string
+          expires_at?: string
+        }
+        Relationships: []
       }
       waitlist: {
         Row: {
